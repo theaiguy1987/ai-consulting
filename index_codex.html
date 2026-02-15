@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agent Thinking for Enterprise Teams</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f4f5ef;
+      --ink: #0e1a2f;
+      --ink-soft: #30405e;
+      --accent: #0b8c78;
+      --accent-2: #f26a38;
+      --card: rgba(255, 255, 255, 0.76);
+      --line: rgba(14, 26, 47, 0.14);
+      --shadow: 0 20px 55px rgba(14, 26, 47, 0.12);
+      --radius-xl: 26px;
+      --radius-lg: 18px;
+      --max: 1140px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at 10% 8%, rgba(11, 140, 120, 0.18), transparent 40%),
+        radial-gradient(circle at 90% 12%, rgba(242, 106, 56, 0.14), transparent 35%),
+        linear-gradient(140deg, #f6f6f1 0%, #eff2f7 100%);
+      color: var(--ink);
+      font-family: "Manrope", "Segoe UI", sans-serif;
+      line-height: 1.45;
+      overflow-x: hidden;
+    }
+
+    .shape {
+      position: fixed;
+      z-index: -1;
+      filter: blur(5px);
+      opacity: 0.55;
+      pointer-events: none;
+      animation: drift 14s ease-in-out infinite alternate;
+    }
+
+    .shape.one {
+      width: 290px;
+      height: 290px;
+      top: 8%;
+      left: -70px;
+      border-radius: 48% 52% 57% 43%;
+      background: linear-gradient(130deg, rgba(11, 140, 120, 0.45), rgba(11, 140, 120, 0.08));
+    }
+
+    .shape.two {
+      width: 260px;
+      height: 260px;
+      top: 62%;
+      right: -70px;
+      border-radius: 59% 41% 40% 60%;
+      background: linear-gradient(135deg, rgba(242, 106, 56, 0.4), rgba(242, 106, 56, 0.08));
+      animation-delay: 1.2s;
+    }
+
+    .section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: clamp(44px, 7vw, 90px) 20px;
+    }
+
+    .wrap {
+      width: min(var(--max), 100%);
+      margin-inline: auto;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(7px);
+      padding: 8px 16px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      margin-bottom: 18px;
+    }
+
+    .badge::before {
+      content: "";
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: linear-gradient(140deg, var(--accent), var(--accent-2));
+      box-shadow: 0 0 0 5px rgba(11, 140, 120, 0.14);
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Sora", "Segoe UI", sans-serif;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+    }
+
+    h1 {
+      font-size: clamp(34px, 6vw, 68px);
+      max-width: 980px;
+      margin-bottom: 16px;
+      text-wrap: balance;
+    }
+
+    .subhead {
+      font-size: clamp(17px, 2vw, 23px);
+      max-width: 870px;
+      color: var(--ink-soft);
+      margin-bottom: 34px;
+    }
+
+    .panel {
+      border-radius: var(--radius-xl);
+      background: var(--card);
+      border: 1px solid rgba(255, 255, 255, 0.82);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+      padding: clamp(18px, 3vw, 30px);
+    }
+
+    .loops {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: stretch;
+      gap: clamp(14px, 2vw, 26px);
+    }
+
+    .loop {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: clamp(16px, 2vw, 24px);
+      background: rgba(255, 255, 255, 0.74);
+    }
+
+    .loop h3 {
+      font-size: clamp(20px, 2.8vw, 32px);
+      margin-bottom: 14px;
+    }
+
+    .steps {
+      list-style: none;
+      display: grid;
+      gap: 11px;
+      font-size: clamp(14px, 1.6vw, 17px);
+    }
+
+    .steps li {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      color: var(--ink-soft);
+    }
+
+    .num {
+      min-width: 25px;
+      font-family: "Sora", sans-serif;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .equal {
+      align-self: center;
+      justify-self: center;
+      width: clamp(86px, 8vw, 116px);
+      height: clamp(86px, 8vw, 116px);
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-size: clamp(20px, 2vw, 28px);
+      font-weight: 800;
+      box-shadow: 0 16px 38px rgba(26, 51, 84, 0.22);
+    }
+
+    .cred {
+      margin-top: 16px;
+      display: grid;
+      gap: 8px;
+      font-size: clamp(14px, 1.5vw, 16px);
+      color: var(--ink-soft);
+    }
+
+    .cred strong {
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .eyebrow {
+      font-size: 13px;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 14px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: clamp(18px, 3vw, 28px);
+      align-items: start;
+    }
+
+    .h2 {
+      font-size: clamp(32px, 4.9vw, 58px);
+      margin-bottom: 10px;
+      text-wrap: balance;
+    }
+
+    .lede {
+      color: var(--ink-soft);
+      font-size: clamp(16px, 1.7vw, 21px);
+      max-width: 650px;
+      margin-bottom: 22px;
+    }
+
+    .phase-list {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .phase-list li {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.66);
+      padding: 12px 14px;
+      font-size: clamp(14px, 1.6vw, 17px);
+      color: var(--ink-soft);
+    }
+
+    .phase-list strong {
+      color: var(--ink);
+      font-family: "Sora", sans-serif;
+      margin-right: 8px;
+    }
+
+    .cards {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 14px 15px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 18px rgba(14, 26, 47, 0.08);
+    }
+
+    .card h3 {
+      font-size: 17px;
+      margin-bottom: 6px;
+    }
+
+    .card p {
+      color: var(--ink-soft);
+      font-size: 14px;
+    }
+
+    .outcomes {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--line);
+      background: linear-gradient(130deg, rgba(11, 140, 120, 0.12), rgba(242, 106, 56, 0.08));
+      padding: 16px;
+      margin-bottom: 16px;
+    }
+
+    .outcomes h3 {
+      font-size: 17px;
+      margin-bottom: 9px;
+    }
+
+    .outcomes ul {
+      list-style: none;
+      display: grid;
+      gap: 6px;
+      font-size: 14px;
+      color: var(--ink-soft);
+    }
+
+    .outcomes li::before {
+      content: "+";
+      margin-right: 8px;
+      color: var(--ink);
+      font-weight: 800;
+    }
+
+    .cta-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      appearance: none;
+      border: 0;
+      border-radius: 999px;
+      padding: 13px 23px;
+      font-family: "Sora", sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      background: linear-gradient(130deg, var(--accent), #087465);
+      color: #fff;
+      text-decoration: none;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+      box-shadow: 0 12px 26px rgba(11, 140, 120, 0.28);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 28px rgba(11, 140, 120, 0.32);
+    }
+
+    .mini {
+      color: var(--ink-soft);
+      font-size: 14px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity 0.72s ease, transform 0.72s ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes drift {
+      from {
+        transform: translateY(-7px) rotate(-2deg);
+      }
+
+      to {
+        transform: translateY(11px) rotate(2deg);
+      }
+    }
+
+    @media (max-width: 980px) {
+      .loops {
+        grid-template-columns: 1fr;
+      }
+
+      .equal {
+        width: 74px;
+        height: 74px;
+        font-size: 18px;
+      }
+
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .section {
+        min-height: auto;
+      }
+
+      .badge {
+        margin-bottom: 14px;
+      }
+
+      .panel {
+        padding: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="shape one" aria-hidden="true"></div>
+  <div class="shape two" aria-hidden="true"></div>
+
+  <section class="section" id="why">
+    <div class="wrap">
+      <div class="badge reveal">Enterprise AI Training for Real Work</div>
+      <h1 class="reveal">Most teams use AI like a chatbox. High-performing teams use it like a workflow system.</h1>
+      <p class="subhead reveal">
+        The market moves at agent speed, while many employees still stop at prompting.
+        This training translates your teams' daily work into an agent-style operating model they can use immediately.
+      </p>
+
+      <div class="panel reveal">
+        <div class="loops">
+          <article class="loop">
+            <h3>Knowledge Worker Loop</h3>
+            <ul class="steps">
+              <li><span class="num">01</span>Receive a high-level goal</li>
+              <li><span class="num">02</span>Plan using existing context</li>
+              <li><span class="num">03</span>Execute across docs, data, web, and tools</li>
+              <li><span class="num">04</span>Evaluate progress and quality</li>
+              <li><span class="num">05</span>Iterate until the outcome is achieved</li>
+            </ul>
+          </article>
+
+          <div class="equal" aria-label="equivalent loops">=</div>
+
+          <article class="loop">
+            <h3>Agent Thinking Loop</h3>
+            <ul class="steps">
+              <li><span class="num">01</span>Clarify objective and constraints</li>
+              <li><span class="num">02</span>Create a task plan</li>
+              <li><span class="num">03</span>Call tools and gather evidence</li>
+              <li><span class="num">04</span>Check if goal criteria are met</li>
+              <li><span class="num">05</span>Refine and repeat with feedback</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="cred">
+          <p><strong>Operator credibility:</strong> Built and led GenAI solutions in engineering R and D at Volvo, including conversational analytics, retrieval, testing support, and smart assistants.</p>
+          <p><strong>Core insight:</strong> Once workers internalize this loop, acceleration is industry-agnostic and transferable across knowledge functions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="how">
+    <div class="wrap panel reveal">
+      <p class="eyebrow">From Concept to Capability</p>
+      <div class="grid-2">
+        <div>
+          <h2 class="h2">How the training creates measurable outcomes</h2>
+          <p class="lede">
+            This is not one-size-fits-all instruction. Each engagement is tailored to your workflows, your tools,
+            and your risk profile, so teams leave with a working method they can deploy.
+          </p>
+
+          <ol class="phase-list">
+            <li><strong>Diagnose</strong>Map 2 to 3 high-value workflows and baseline cycle time.</li>
+            <li><strong>Train</strong>Teach a practical AI operating model for executives, teams, and builders.</li>
+            <li><strong>Build</strong>Create one production-ready digital coworker prototype in your environment.</li>
+            <li><strong>Deploy</strong>Define governance, adoption playbook, and scale roadmap.</li>
+          </ol>
+        </div>
+
+        <aside>
+          <div class="cards">
+            <article class="card">
+              <h3>Executive Track</h3>
+              <p>Investment priorities, ROI logic, risk boundaries, and how to sequence enterprise rollout.</p>
+            </article>
+            <article class="card">
+              <h3>Team Track</h3>
+              <p>Daily agent-style workflows for research, analysis, reporting, and cross-functional execution.</p>
+            </article>
+            <article class="card">
+              <h3>Builder Track</h3>
+              <p>Retrieval, tool-use, evaluation, and deployment practices to ship reliable internal copilots.</p>
+            </article>
+          </div>
+
+          <div class="outcomes">
+            <h3>Typical Pilot Outcomes</h3>
+            <ul>
+              <li>Shorter workflow cycle time within weeks</li>
+              <li>Higher quality through structured review loops</li>
+              <li>Reusable patterns teams can scale across units</li>
+              <li>A leadership-ready metric dashboard for go/no-go decisions</li>
+            </ul>
+          </div>
+
+          <div class="cta-row">
+            <a class="btn" href="#" aria-label="Book a 15 minute fit call">Book a 15-minute fit call</a>
+            <p class="mini">Start with one 2 to 4 week pilot workflow and scale what proves value.</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const revealItems = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.18, rootMargin: "0px 0px -40px 0px" });
+
+    revealItems.forEach((item) => observer.observe(item));
+  </script>
+</body>
+</html>

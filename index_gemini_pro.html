@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beyond Chat: Specialized AI Training for Enterprises</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --text-light: #ecf0f1;
+            --text-dark: #333;
+            --bg-light: #ffffff;
+            --bg-dark: #1a252f;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        /* SECTION 1: The Gap & The Parallel */
+        #section-1 {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--bg-dark) 0%, #2c3e50 100%);
+            color: var(--text-light);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+
+        .hero-content {
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .highlight {
+            color: var(--secondary-color);
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            max-width: 800px;
+        }
+
+        .analogy-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .analogy-column h3 {
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+        }
+
+        .workflow-step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.5s forwards;
+        }
+
+        /* Stagger animations */
+        .workflow-step:nth-child(2) { animation-delay: 0.2s; }
+        .workflow-step:nth-child(3) { animation-delay: 0.4s; }
+        .workflow-step:nth-child(4) { animation-delay: 0.6s; }
+        .workflow-step:nth-child(5) { animation-delay: 0.8s; }
+        .workflow-step:nth-child(6) { animation-delay: 1.0s; }
+
+        .step-number {
+            background-color: var(--secondary-color);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            flex-shrink: 0;
+            font-weight: bold;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            opacity: 0.7;
+        }
+
+        /* SECTION 2: The Solution & Strategy */
+        #section-2 {
+            min-height: 100vh;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            padding: 5rem 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .strategy-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .experience-badge {
+            display: inline-block;
+            background-color: #f0f4f8;
+            color: var(--primary-color);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .feature-icon {
+            color: var(--secondary-color);
+            margin-right: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .cta-box {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            text-align: center;
+        }
+
+        .cta-box h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-box p {
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        /* Animations */
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+            40% { transform: translateY(-10px) translateX(-50%); }
+            60% { transform: translateY(-5px) translateX(-50%); }
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .analogy-container { grid-template-columns: 1fr; }
+            .strategy-grid { grid-template-columns: 1fr; }
+            #section-1 { padding: 2rem 0; height: auto; min-height: 100vh;}
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Section 1: The Gap & The Parallel -->
+    <section id="section-1">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Bridging the <span class="highlight">10x Gap</span></h1>
+                <p class="subtitle">Most of your workforce uses AI like a chatbot. We teach them to build AI that works like an engineer.</p>
+                
+                <div class="analogy-container">
+                    <!-- Left: The Human Worker -->
+                    <div class="analogy-column">
+                        <h3>The Human Knowledge Loop</h3>
+                        <div class="workflow-step">
+                            <div class="step-number">1</div>
+                            <div>
+                                <strong>Goal Setting</strong><br>
+                                <small>Receives a high-level objective.</small>
+                            </div>
+                        </div>
+                        <div class="workflow-step">
+                            <div class="step-number">2</div>
+                            <div>
+                                <strong>Planning</strong><br>
+                                <small>Analyses requirements and outlines steps.</small>
+                            </div>
+                        </div>
+                        <div class="workflow-step">
+                            <div class="step-number">3</div>
+                            <div>
+                                <strong>Action & Tool Use</strong><br>
+                                <small>Reading docs, checking data, researching.</small>
+                            </div>
+                        </div>
+                        <div class="workflow-step">
+                            <div class="step-number">4</div>
+                            <div>
+                                <strong>Evaluation</strong><br>
+                                <small>Did I solve it? If not, iterate.</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: The Agent Parallel -->
+                    <div class="analogy-column">
+                        <h3 style="color: var(--secondary-color);">The Agent Workflow</h3>
+                        <div class="workflow-step">
+                            <div class="step-number" style="background-color: var(--accent-color);">1</div>
+                            <div>
+                                <strong>Prompt Injection</strong><br>
+                                <small>Agent receives the same high-level goal.</small>
+                            </div>
+                        </div>
+                        <div class="workflow-step">
+                            <div class="step-number" style="background-color: var(--accent-color);">2</div>
+                            <div>
+                                <strong>Chain of Thought</strong><br>
+                                <small>LLM breaks down the problem logically.</small>
+                            </div>
+                        </div>
+                        <div class="workflow-step">
+                            <div class="step-number" style="background-color: var(--accent-color);">3</div>
+                            <div>
+                                <strong>Tool Calling</strong><br>
+                                <small>Retrieval (RAG), SQL queries, Search APIs.</small>
+                            </div>
+                        </div>
+                        <div class="workflow-step">
+                            <div class="step-number" style="background-color: var(--accent-color);">4</div>
+                            <div>
+                                <strong>Self-Reflection</strong><br>
+                                <small>Looping until the output meets quality standards.</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Section 2: The Solution -->
+    <section id="section-2">
+        <div class="container">
+            <div class="strategy-grid">
+                <div class="about-text">
+                    <div class="experience-badge">Proven in Engineering R&D</div>
+                    <h2>Operationalizing "The Agent Mindset"</h2>
+                    <p style="margin-bottom: 1.5rem; line-height: 1.6;">
+                        Your employees already know <em>what</em> needs to be done. The disconnect is that they don't know how to translate their cognitive workflow into an AI agent structure.
+                    </p>
+                    <p style="margin-bottom: 1.5rem; line-height: 1.6;">
+                        Drawing from deep experience leading GenAI teams in automotive R&D (Volvo), I don't just teach "prompt engineering." I teach your domain experts how to adhere to the <strong>Agentic Loop</strong>—converting their daily manual loops into automated, intelligent assistants.
+                    </p>
+                    
+                    <div class="features">
+                        <div class="feature-item">
+                            <div class="feature-icon">✓</div>
+                            <div>
+                                <strong>Customized to Your Industry</strong>
+                                <p style="font-size: 0.9rem; color: #666;">Not one-size-fits-all. We build training based on your specific document types, data silos, and engineering workflows.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">✓</div>
+                            <div>
+                                <strong>Beyond Productivity</strong>
+                                <p style="font-size: 0.9rem; color: #666;">We focus on innovation. When the drudgery is automated, your team returns to high-value creative engineering.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">✓</div>
+                            <div>
+                                <strong>Technical & Strategic</strong>
+                                <p style="font-size: 0.9rem; color: #666;">From high-level strategy for executives to hands-on implementation of Data Analytics and Retrieval agents for engineers.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cta-box">
+                    <h3>Ready to upgrade your workforce?</h3>
+                    <p>Give me 5 minutes to walk you through a live demonstration of an Agent Workflow customized for your sector.</p>
+                    <a href="#" class="btn" style="background-color: white; color: var(--primary-color);">Schedule a Briefing</a>
+                    <p style="margin-top: 1rem; font-size: 0.8rem; opacity: 0.7;">Email: contact@consultancy.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
