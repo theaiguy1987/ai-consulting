@@ -805,6 +805,7 @@ section h2 {
     display: flex;
     gap: 0.6rem;
     color: var(--color-accent);
+    align-items: center;
 }
 
 .principles-section {
@@ -1209,6 +1210,38 @@ section h2 {
     border-radius: var(--radius-lg);
     border: 1px solid rgba(148, 163, 184, 0.5);
     background: rgba(15, 23, 42, 0.96);
+}
+
+.teaching-callout {
+    margin-top: -0.6rem;
+    margin-bottom: 2.5rem;
+    padding: 1.3rem 1.2rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(148, 163, 184, 0.55);
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.12), rgba(15, 23, 42, 0.96));
+    box-shadow: var(--shadow-sm);
+}
+
+.teaching-callout p {
+    font-size: 0.98rem;
+    color: var(--color-muted);
+    line-height: 1.55;
+}
+
+.teaching-callout strong {
+    color: var(--color-heading);
+}
+
+@media (max-width: 768px) {
+    .teaching-callout {
+        margin-top: -0.2rem;
+        margin-bottom: 2.2rem;
+        padding: 1.05rem 0.95rem;
+    }
+
+    .teaching-callout p {
+        font-size: 0.93rem;
+    }
 }
 
 .experience-summary {
