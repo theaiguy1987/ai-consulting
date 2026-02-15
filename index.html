@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Enterprise AI workflow automation training that helps teams turn knowledge work into repeatable, decision-ready outputs in 6 weeks.">
+    <meta property="og:title" content="Masoom Kumar | Enterprise AI Workflow Automation Training">
+    <meta property="og:description" content="A focused 6-week capability sprint to help teams automate high-value knowledge workflows.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://masoomkumar.com/">
+    <meta property="og:image" content="Images/About_Me/1762605631064.jpeg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Masoom Kumar | Enterprise AI Workflow Automation Training">
+    <meta name="twitter:description" content="Practical 6-week training to move teams from chat-style AI use to workflow automation.">
+    <meta name="twitter:image" content="Images/About_Me/1762605631064.jpeg">
+    <title>Masoom Kumar | Enterprise AI Workflow Automation Training</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <a class="skip-link" href="#hero">Skip to content</a>
+    <!-- Reusable SVG icons -->
+    <svg class="visually-hidden" aria-hidden="true">
+        <symbol id="icon-gear" viewBox="0 0 32 32">
+            <circle cx="16" cy="16" r="5" fill="none" stroke="currentColor" stroke-width="1.6"/>
+            <path d="M16 5 L17.5 8.5 L21 9.5 L22 13 L25.5 14.5 L25.5 17.5 L22 19 L21 22.5 L17.5 23.5 L16 27 L14.5 23.5 L11 22.5 L10 19 L6.5 17.5 L6.5 14.5 L10 13 L11 9.5 L14.5 8.5 Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+        </symbol>
+        <symbol id="icon-people" viewBox="0 0 32 32">
+            <circle cx="11" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/>
+            <circle cx="21" cy="10" r="3.5" fill="none" stroke="currentColor" stroke-width="1.4"/>
+            <path d="M4 26 C4 20 9 18 11 18 C13 18 18 20 18 26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            <path d="M18 25 C18 20.5 20.5 18.8 22.5 18.5 C24.5 18.2 28 19.5 28 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        </symbol>
+        <symbol id="icon-clock" viewBox="0 0 32 32">
+            <circle cx="16" cy="16" r="10" fill="none" stroke="currentColor" stroke-width="1.8"/>
+            <line x1="16" y1="16" x2="16" y2="9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            <line x1="16" y1="16" x2="22" y2="18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        </symbol>
+        <symbol id="icon-alert" viewBox="0 0 32 32">
+            <path d="M16 5 L27 25 H5 Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+            <line x1="16" y1="12" x2="16" y2="19" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            <circle cx="16" cy="23" r="1.2" fill="currentColor"/>
+        </symbol>
+        <symbol id="icon-rocket" viewBox="0 0 32 32">
+            <path d="M16 4 C22 4 26 8 26 14 C26 20 22 26 18 28 L16 24 L14 28 C10 26 6 20 6 14 C6 8 10 4 16 4 Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+            <circle cx="16" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.4"/>
+            <path d="M12 20 L10 24 L14 22" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </symbol>
+        <symbol id="icon-target" viewBox="0 0 32 32">
+            <circle cx="16" cy="16" r="10" fill="none" stroke="currentColor" stroke-width="1.6"/>
+            <circle cx="16" cy="16" r="5" fill="none" stroke="currentColor" stroke-width="1.4"/>
+            <circle cx="16" cy="16" r="2" fill="currentColor"/>
+            <path d="M7 7 L12 9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+        </symbol>
+        <symbol id="icon-hands" viewBox="0 0 32 32">
+            <path d="M8 18 L8 12 C8 10.5 9.2 9.3 10.7 9.3 C12.2 9.3 13.4 10.5 13.4 12 L13.4 18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+            <path d="M24 18 L24 12 C24 10.5 22.8 9.3 21.3 9.3 C19.8 9.3 18.6 10.5 18.6 12 L18.6 18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+            <path d="M6 18 L12 24 L20 24 L26 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </symbol>
+        <symbol id="icon-shield" viewBox="0 0 32 32">
+            <path d="M16 4 L26 8 V16 C26 21 22.5 25.5 16 28 C9.5 25.5 6 21 6 16 V8 Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+            <path d="M16 11 V21" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            <path d="M11 16 H21" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        </symbol>
+        <symbol id="icon-layers" viewBox="0 0 32 32">
+            <polygon points="16 5 27 11 16 17 5 11 16 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+            <polyline points="7 17 16 22 25 17" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+            <polyline points="9 23 16 27 23 23" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
+        </symbol>
+        <symbol id="icon-scale" viewBox="0 0 32 32">
+            <line x1="6" y1="24" x2="26" y2="24" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            <rect x="8" y="16" width="4" height="8" rx="1" fill="none" stroke="currentColor" stroke-width="1.4"/>
+            <rect x="15" y="12" width="4" height="12" rx="1" fill="none" stroke="currentColor" stroke-width="1.4"/>
+            <rect x="22" y="8" width="4" height="16" rx="1" fill="none" stroke="currentColor" stroke-width="1.4"/>
+        </symbol>
+        <symbol id="icon-flag" viewBox="0 0 32 32">
+            <path d="M8 5 V27" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            <path d="M8 5 L24 8 L17 13 L24 18 L8 21" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+        </symbol>
+        <symbol id="icon-speed" viewBox="0 0 32 32">
+            <path d="M6 22 C6 14 11 8 16 8 C21 8 26 14 26 22" fill="none" stroke="currentColor" stroke-width="1.6"/>
+            <path d="M8 22 H24" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            <line x1="16" y1="16" x2="21" y2="20" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        </symbol>
+        <symbol id="icon-question" viewBox="0 0 32 32">
+            <path d="M12 11 C12 8.5 14 7 16 7 C18 7 20 8.5 20 11 C20 13 18.5 14.5 17 15.5 C15.5 16.5 15 17.5 15 19" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            <line x1="16" y1="23" x2="16" y2="23" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+        </symbol>
+        <symbol id="icon-grid" viewBox="0 0 32 32">
+            <rect x="6" y="6" width="20" height="20" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+            <line x1="16" y1="6" x2="16" y2="26" stroke="currentColor" stroke-width="1.2"/>
+            <line x1="6" y1="16" x2="26" y2="16" stroke="currentColor" stroke-width="1.2"/>
+        </symbol>
+        <symbol id="icon-check" viewBox="0 0 32 32">
+            <polyline points="6 16 12 22 26 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </symbol>
+        <symbol id="icon-wrench" viewBox="0 0 32 32">
+            <path d="M22 6 A6 6 0 0 0 16 12 L16 14 L8 22 L12 26 L20 18 L22 18 A6 6 0 0 0 26 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+            <circle cx="9.5" cy="24.5" r="1.5" fill="none" stroke="currentColor" stroke-width="1.2"/>
+        </symbol>
+        <symbol id="icon-chip" viewBox="0 0 32 32">
+            <rect x="10" y="10" width="12" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.4"/>
+            <rect x="6" y="6" width="20" height="20" rx="3" fill="none" stroke="currentColor" stroke-width="1.4" stroke-dasharray="2 2"/>
+            <path d="M16 4 V8 M16 24 V28 M4 16 H8 M24 16 H28" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+        </symbol>
+        <symbol id="icon-globe" viewBox="0 0 32 32">
+            <circle cx="16" cy="16" r="10" fill="none" stroke="currentColor" stroke-width="1.6"/>
+            <ellipse cx="16" cy="16" rx="4" ry="10" fill="none" stroke="currentColor" stroke-width="1.4"/>
+            <line x1="6" y1="16" x2="26" y2="16" stroke="currentColor" stroke-width="1.2"/>
+            <line x1="16" y1="6" x2="16" y2="26" stroke="currentColor" stroke-width="1.2"/>
+        </symbol>
+        <symbol id="icon-flag-asia" viewBox="0 0 32 32">
+            <rect x="6" y="10" width="20" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.4"/>
+            <circle cx="16" cy="16" r="3" fill="none" stroke="currentColor" stroke-width="1.4"/>
+            <path d="M6 14 H26 M6 18 H26" stroke="currentColor" stroke-width="1" stroke-dasharray="2 2"/>
+        </symbol>
+        <symbol id="icon-flag-europe" viewBox="0 0 32 32">
+            <rect x="6" y="10" width="20" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.4"/>
+            <circle cx="16" cy="16" r="5" fill="none" stroke="currentColor" stroke-width="1"/>
+            <circle cx="16" cy="16" r="0.8" fill="currentColor"/>
+            <path d="M16 11 L17 13 L19 13.5 L17.8 15 L18.2 17 L16 16 L13.8 17 L14.2 15 L13 13.5 L15 13 Z" fill="none" stroke="currentColor" stroke-width="0.9" stroke-linejoin="round"/>
+        </symbol>
+        <symbol id="icon-flag-usa" viewBox="0 0 32 32">
+            <rect x="6" y="10" width="20" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.4"/>
+            <rect x="6" y="10" width="8" height="6" fill="none" stroke="currentColor" stroke-width="1"/>
+            <path d="M6 14 H26 M6 18 H26 M6 22 H26" stroke="currentColor" stroke-width="1"/>
+        </symbol>
+        <symbol id="icon-calendar" viewBox="0 0 32 32">
+            <rect x="6" y="8" width="20" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/>
+            <line x1="6" y1="13" x2="26" y2="13" stroke="currentColor" stroke-width="1.6"/>
+            <line x1="11" y1="5" x2="11" y2="11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            <line x1="21" y1="5" x2="21" y2="11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        </symbol>
+        <symbol id="icon-mail" viewBox="0 0 32 32">
+            <rect x="5" y="8" width="22" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+            <polyline points="5 10 16 18 27 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+        </symbol>
+        <symbol id="icon-phone" viewBox="0 0 32 32">
+            <path d="M12 4 L8 6 L8 11 C9 17 15 23 21 24 L26 24 L28 20 C27 19 24 17 23 17 C22 17 20 19 19 19 C17 19 13 15 13 13 C13 12 15 10 15 9 C15 8 13 5 12 4 Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </symbol>
+        <symbol id="icon-link" viewBox="0 0 32 32">
+            <path d="M12 20 L10 22 C7.5 24.5 7.5 28.5 10 31 C12.5 33.5 16.5 33.5 19 31 L22 28" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+            <path d="M20 12 L22 10 C24.5 7.5 24.5 3.5 22 1 C19.5 -1.5 15.5 -1.5 13 1 L10 4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+            <line x1="12" y1="20" x2="20" y2="12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        </symbol>
+    </svg>
+
+    <header class="site-header">
+        <nav id="navbar" aria-label="Primary navigation">
+            <div class="nav-content container">
+                <a href="#hero" class="logo">Masoom Kumar</a>
+                <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+                    <span class="nav-toggle-bar" aria-hidden="true"></span>
+                    <span class="nav-toggle-bar" aria-hidden="true"></span>
+                    <span class="nav-toggle-bar" aria-hidden="true"></span>
+                </button>
+                <ul class="nav-links" id="primary-nav">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#problem">Problem</a></li>
+                    <li><a href="#solution">Solution</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <div class="container">
+                <div class="hero-text">
+                    <p class="hero-eyebrow">Enterprise AI workflow automation training</p>
+                    <h1>Turn knowledge work into repeatable automation in 6 weeks</h1>
+                    <p class="hero-subtitle">
+                        I help teams move beyond chat-style AI usage by training employees on a practical operating method they can apply directly after the program.
+                    </p>
+
+                    <div class="hero-highlights">
+                        <span class="chip">Knowledge-worker workflows</span>
+                        <span class="chip">Hands-on with your own data and documents</span>
+                        <span class="chip">Delivered in 6 weeks</span>
+                    </div>
+
+                    <div class="cta-buttons">
+                        <a href="https://calendar.app.google/xF1KXVmG9kYbi4y99" class="btn btn-primary" target="_blank" rel="noopener">Interested? Schedule a meeting!</a>
+                        <a href="#solution" class="btn btn-secondary">See the Method</a>
+                    </div>
+
+                    <p class="hero-footnote">
+                        Not a one-year transformation. A focused sprint that builds internal capability.
+                    </p>
+                </div>
+
+                <div class="hero-visual" aria-hidden="true">
+                    <svg class="hero-visual-svg" viewBox="0 0 360 320">
+                        <defs>
+                            <linearGradient id="heroGradient" x1="0" y1="0" x2="1" y2="1">
+                                <stop offset="0%" stop-color="#38bdf8"/>
+                                <stop offset="50%" stop-color="#6366f1"/>
+                                <stop offset="100%" stop-color="#a855f7"/>
+                            </linearGradient>
+                            <radialGradient id="heroGlow" cx="0.5" cy="0" r="1">
+                                <stop offset="0%" stop-color="rgba(56,189,248,0.9)"/>
+                                <stop offset="100%" stop-color="rgba(15,23,42,0)"/>
+                            </radialGradient>
+                        </defs>
+
+                        <rect x="24" y="24" width="312" height="232" rx="28" fill="#020617" stroke="url(#heroGradient)" stroke-width="2"/>
+                        <rect x="48" y="54" width="110" height="10" rx="5" fill="rgba(148,163,184,0.25)"/>
+                        <rect x="48" y="76" width="80" height="10" rx="5" fill="rgba(148,163,184,0.2)"/>
+
+                        <path d="M52 190 C82 150, 110 160, 140 140 S 200 120, 228 150 S 280 190, 304 162"
+                              fill="none"
+                              stroke="url(#heroGradient)"
+                              stroke-width="3"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"/>
+
+                        <circle cx="52" cy="190" r="5" fill="#38bdf8"/>
+                        <circle cx="140" cy="140" r="5" fill="#22c55e"/>
+                        <circle cx="228" cy="150" r="5" fill="#eab308"/>
+                        <circle cx="304" cy="162" r="6" fill="#f97316"/>
+
+                        <rect x="210" y="86" width="104" height="80" rx="18" fill="rgba(15,23,42,0.9)" stroke="rgba(148,163,184,0.45)" stroke-width="1.4"/>
+                        <circle cx="232" cy="112" r="6" fill="#22c55e"/>
+                        <circle cx="256" cy="112" r="6" fill="#eab308"/>
+                        <circle cx="280" cy="112" r="6" fill="#f97316"/>
+
+                        <path d="M224 140 H296" stroke="rgba(148,163,184,0.6)" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M224 156 H272" stroke="rgba(148,163,184,0.45)" stroke-width="2" stroke-linecap="round"/>
+
+                        <circle cx="180" cy="260" r="90" fill="url(#heroGlow)" opacity="0.85"/>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem Section -->
+        <section id="problem" class="problem section">
+            <div class="container">
+                <span class="section-label">The Challenge</span>
+                <h2>The Problem</h2>
+                <p class="section-intro">
+                    Most organizations have adopted AI, but many teams still use it like a chat tool instead of an automation layer for real workflows. As a result:
+                </p>
+
+                <div class="cards-grid">
+                    <article class="card">
+                        <div class="card-icon" aria-hidden="true">
+                            <svg class="icon icon--small">
+                                <use href="#icon-gear"></use>
+                            </svg>
+                        </div>
+                        <h3>AI Stays in Chat Mode</h3>
+                        <p>
+                            Teams get one-off answers, but no repeatable method to run end-to-end analysis, reporting, and decision workflows.
+                        </p>
+                        <span class="badge">Adoption plateau</span>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-icon" aria-hidden="true">
+                            <svg class="icon icon--small">
+                                <use href="#icon-people"></use>
+                            </svg>
+                        </div>
+                        <h3>Workflows Are Fragmented</h3>
+                        <p>
+                            Work bounces across documents, spreadsheets, and tools without a shared operating loop for consistency and quality.
+                        </p>
+                        <span class="badge">Execution gap</span>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-icon" aria-hidden="true">
+                            <svg class="icon icon--small">
+                                <use href="#icon-clock"></use>
+                            </svg>
+                        </div>
+                        <h3>Decision Cycles Stay Slow</h3>
+                        <p>
+                            Without structured iteration, teams spend too long preparing outputs and too little time acting on clear recommendations.
+                        </p>
+                        <span class="badge">Time drain</span>
+                    </article>
+                </div>
+
+                <div class="highlight-box">
+                    <div class="highlight-icon" aria-hidden="true">
+                        <svg class="icon icon--small">
+                            <use href="#icon-alert"></use>
+                        </svg>
+                    </div>
+                    <p>
+                        The missing piece is a practical method your employees can apply every day, not more generic AI access.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solution Section -->
+        <section id="solution" class="solution section">
+            <div class="container">
+                <span class="section-label section-label--accent">The Answer</span>
+                <h2>The Solution</h2>
+                <p class="section-intro">
+                    This is not a one-year transformation program with endless PoCs. It is a focused 6-week capability sprint that helps teams automate high-value knowledge workflows.
+                </p>
+
+                <div class="solution-layout">
+                    <article class="program-box">
+                        <header class="program-header">
+                            <div class="program-icon" aria-hidden="true">
+                                <svg class="icon icon--small">
+                                    <use href="#icon-rocket"></use>
+                                </svg>
+                            </div>
+                            <h3>Start with the 6-Week Capability Sprint</h3>
+                        </header>
+                        <p class="program-tagline">
+                            Automation succeeds when people, method, and tools are aligned from day one.
+                        </p>
+                        <p>
+                            Your team learns a formal knowledge-worker loop: set objective, collect inputs, analyze insights, deliver output, and iterate until outcomes are decision-ready.
+                        </p>
+
+                        <div class="program-stats">
+                            <div class="stat">
+                                <span class="stat-number">6</span>
+                                <span class="stat-label">Weeks</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">1</span>
+                                <span class="stat-label">Pilot workflow</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">Team</span>
+                                <span class="stat-label">Ready playbook</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <div class="principles-section">
+                        <h3 class="principles-title">Three Core Principles</h3>
+                        <div class="mini-cards">
+                            <article class="mini-card">
+                                <span class="mini-icon" aria-hidden="true">
+                                    <svg class="icon icon--xsmall">
+                                        <use href="#icon-target"></use>
+                                    </svg>
+                                </span>
+                                <h4>Start with Real Workflows</h4>
+                                <p>We train on your actual tasks, documents, and data so the method transfers directly to day-to-day execution after training.</p>
+                            </article>
+
+                            <article class="mini-card">
+                                <span class="mini-icon" aria-hidden="true">
+                                    <svg class="icon icon--xsmall">
+                                        <use href="#icon-hands"></use>
+                                    </svg>
+                                </span>
+                                <h4>Human-in-the-Loop by Design</h4>
+                                <p>Teams use AI for automation while people keep control of decisions, judgment, and quality checks where it matters.</p>
+                            </article>
+
+                            <article class="mini-card">
+                                <span class="mini-icon" aria-hidden="true">
+                                    <svg class="icon icon--xsmall">
+                                        <use href="#icon-layers"></use>
+                                    </svg>
+                                </span>
+                                <h4>Methods You Can Scale</h4>
+                                <p>We leave reusable prompts, templates, and guardrails so teams can replicate the same method across functions.</p>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="program-timeline">
+                    <h3 class="timeline-title">Knowledge Worker Loop in Action: Sales Performance Analysis</h3>
+                    <div class="phase-cards">
+                        <article class="phase-card">
+                            <header class="phase-header">
+                                <span class="phase-icon" aria-hidden="true">
+                                    <svg class="icon icon--xsmall">
+                                        <use href="#icon-grid"></use>
+                                    </svg>
+                                </span>
+                                <h4>Step 1: Set Objective</h4>
+                            </header>
+                            <ul class="phase-list">
+                                <li><strong>Business question:</strong> Why did Q4 revenue miss target and what actions recover the gap in Q1?</li>
+                                <li><strong>Scope:</strong> Region, product line, and account segments.</li>
+                                <li><strong>Deliverable:</strong> Decision question and success criteria.</li>
+                            </ul>
+                        </article>
+
+                        <article class="phase-card">
+                            <header class="phase-header">
+                                <span class="phase-icon" aria-hidden="true">
+                                    <svg class="icon icon--xsmall">
+                                        <use href="#icon-scale"></use>
+                                    </svg>
+                                </span>
+                                <h4>Step 2: Collect Inputs</h4>
+                            </header>
+                            <ul class="phase-list">
+                                <li><strong>Data:</strong> Revenue by region and product, pipeline, discounts, returns, churn, and quota attainment.</li>
+                                <li><strong>Context:</strong> Prior quarter actions and sales strategy notes.</li>
+                                <li><strong>Deliverable:</strong> Clean analysis-ready input pack.</li>
+                            </ul>
+                        </article>
+
+                        <article class="phase-card">
+                            <header class="phase-header">
+                                <span class="phase-icon" aria-hidden="true">
+                                    <svg class="icon icon--xsmall">
+                                        <use href="#icon-flag"></use>
+                                    </svg>
+                                </span>
+                                <h4>Step 3: Analyze Insights</h4>
+                            </header>
+                            <ul class="phase-list">
+                                <li><strong>Checks:</strong> QoQ and YoY trends, win-rate movement, margin leakage, and concentration risk.</li>
+                                <li><strong>Comparisons:</strong> Segment and region-level variance.</li>
+                                <li><strong>Deliverable:</strong> Root-cause findings with evidence.</li>
+                            </ul>
+                        </article>
+
+                        <article class="phase-card">
+                            <header class="phase-header">
+                                <span class="phase-icon" aria-hidden="true">
+                                    <svg class="icon icon--xsmall">
+                                        <use href="#icon-check"></use>
+                                    </svg>
+                                </span>
+                                <h4>Step 4: Deliver Output</h4>
+                            </header>
+                            <ul class="phase-list">
+                                <li><strong>Output:</strong> Executive summary, visual trends, and action recommendations by owner.</li>
+                                <li><strong>Format:</strong> Decision-ready briefing for leadership.</li>
+                                <li><strong>Deliverable:</strong> Clear actions and accountability.</li>
+                            </ul>
+                        </article>
+
+                        <article class="phase-card">
+                            <header class="phase-header">
+                                <span class="phase-icon" aria-hidden="true">
+                                    <svg class="icon icon--xsmall">
+                                        <use href="#icon-speed"></use>
+                                    </svg>
+                                </span>
+                                <h4>Step 5: Outcome Achieved?</h4>
+                            </header>
+                            <ul class="phase-list">
+                                <li><strong>Yes:</strong> Execute and track results.</li>
+                                <li><strong>No:</strong> Return to Step 2 and enrich inputs.</li>
+                                <li><strong>Deliverable:</strong> Controlled iteration loop.</li>
+                            </ul>
+                        </article>
+                    </div>
+
+                    <div class="highlight-box">
+                        <div class="highlight-icon" aria-hidden="true">
+                            <svg class="icon icon--small">
+                                <use href="#icon-alert"></use>
+                            </svg>
+                        </div>
+                        <p><strong>Iteration rule:</strong> If Step 5 is "No", route back to Step 2, fill gaps, and rerun the loop until the outcome is achieved.</p>
+                    </div>
+                </div>
+
+                <div class="results-box">
+                    <h3>What You Get</h3>
+                    <div class="results-grid">
+                        <div class="result-item">
+                            <span class="result-icon" aria-hidden="true">
+                                <svg class="icon icon--xsmall">
+                                    <use href="#icon-speed"></use>
+                                </svg>
+                            </span>
+                            <p>Faster analysis and reporting cycles on high-value workflows.</p>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-icon" aria-hidden="true">
+                                <svg class="icon icon--xsmall">
+                                    <use href="#icon-question"></use>
+                                </svg>
+                            </span>
+                            <p>Employees who can apply the method directly after training.</p>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-icon" aria-hidden="true">
+                                <svg class="icon icon--xsmall">
+                                    <use href="#icon-scale"></use>
+                                </svg>
+                            </span>
+                            <p>Consistent quality through explicit review and iteration loops.</p>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-icon" aria-hidden="true">
+                                <svg class="icon icon--xsmall">
+                                    <use href="#icon-rocket"></use>
+                                </svg>
+                            </span>
+                            <p>A reusable automation playbook teams can scale across functions.</p>
+                        </div>
+                    </div>
+
+                    <a href="https://calendar.app.google/xF1KXVmG9kYbi4y99" class="btn btn-cta" target="_blank" rel="noopener">Interested? Schedule a meeting!</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about section">
+            <div class="container">
+                <span class="section-label section-label--subtle">Your Partner</span>
+                <h2>Why Work With Me?</h2>
+                <p class="subtitle">
+                    I combine deep automotive domain expertise with practical AI implementation experience to help enterprises build real internal capability.
+                </p>
+
+                <div class="profile-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">13+</span>
+                        <span class="stat-label">Years in Automotive R&amp;D</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">4</span>
+                        <span class="stat-label">Major OEMs</span>
+                    </div>
+                    <div class="stat-item stat-item--flags">
+                        <span class="stat-number">3</span>
+                        <span class="stat-label">Continents</span>
+                        <div class="flag-row" aria-hidden="true">
+                            <svg class="icon icon--xsmall">
+                                <use href="#icon-flag-asia"></use>
+                            </svg>
+                            <svg class="icon icon--xsmall">
+                                <use href="#icon-flag-europe"></use>
+                            </svg>
+                            <svg class="icon icon--xsmall">
+                                <use href="#icon-flag-usa"></use>
+                            </svg>
+                        </div>
+                        <span class="visually-hidden">Asia, Europe, and USA</span>
+                    </div>
+                </div>
+
+                <div class="experience-summary">
+                    <article class="experience-card">
+                        <span class="experience-icon" aria-hidden="true">
+                            <svg class="icon icon--small">
+                                <use href="#icon-wrench"></use>
+                            </svg>
+                        </span>
+                        <h3>Automotive Engineering</h3>
+                        <p>
+                            13+ years in powertrain development across the full stack: software, calibration, testing, and data analysis at Delphi, Volvo Cars, CEVT, and Volvo Trucks.
+                        </p>
+                    </article>
+
+                    <article class="experience-card">
+                        <span class="experience-icon" aria-hidden="true">
+                            <svg class="icon icon--small">
+                                <use href="#icon-chip"></use>
+                            </svg>
+                        </span>
+                        <h3>Data &amp; AI Leadership</h3>
+                        <p>
+                            I have steered high-impact data and AI initiatives at nearly every company I have served, including Volvo's most recent push, translating strategy into production outcomes while advising vice presidents who rely on that guidance for critical decisions.
+                        </p>
+                    </article>
+
+                    <article class="experience-card">
+                        <span class="experience-icon" aria-hidden="true">
+                            <svg class="icon icon--small">
+                                <use href="#icon-globe"></use>
+                            </svg>
+                        </span>
+                        <h3>Global Network</h3>
+                        <p>
+                            Deep connections with automotive experts across three continents. Access to specialised knowledge when complex challenges require additional expertise.
+                        </p>
+                    </article>
+                </div>
+
+                <div class="conference-gallery">
+                    <h3>Speaking at International AI Conferences</h3>
+                    <div class="gallery-grid">
+                        <img src="Images/About_Me/1762605631064.jpeg" alt="Masoom Kumar speaking at an AI conference" class="gallery-image" loading="lazy">
+                        <img src="Images/About_Me/1762605631086.jpeg" alt="Masoom Kumar presenting at an AI conference" class="gallery-image" loading="lazy">
+                        <img src="Images/About_Me/1762605631400.jpeg" alt="Masoom Kumar at an international AI event" class="gallery-image" loading="lazy">
+                    </div>
+                </div>
+
+                <div class="value-prop">
+                    <p>
+                        <strong>The difference?</strong>
+                        I've lived the problem you're facing. I understand both the domain expertise of your engineers and the practical AI tools that can amplify their impact.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact section">
+            <div class="container">
+                <span class="section-label section-label--accent">Next Step</span>
+                <h2>Let's Talk</h2>
+                <p>Ready to empower your teams with practical AI automation capabilities?</p>
+                <p>Interested? Schedule a meeting and we will map your first workflow pilot together.</p>
+
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <h4>
+                            <span class="contact-icon" aria-hidden="true">
+                                <svg class="icon icon--xsmall">
+                                    <use href="#icon-calendar"></use>
+                                </svg>
+                            </span>
+                            Schedule a Meeting
+                        </h4>
+                        <a href="https://calendar.app.google/xF1KXVmG9kYbi4y99" target="_blank" rel="noopener">Interested? Schedule a meeting!</a>
+                    </div>
+
+                    <div class="contact-item">
+                        <h4>
+                            <span class="contact-icon" aria-hidden="true">
+                                <svg class="icon icon--xsmall">
+                                    <use href="#icon-mail"></use>
+                                </svg>
+                            </span>
+                            Email Me
+                        </h4>
+                        <a href="mailto:masoom.kumar87@gmail.com">masoom.kumar87@gmail.com</a>
+                    </div>
+
+                    <div class="contact-item">
+                        <h4>
+                            <span class="contact-icon" aria-hidden="true">
+                                <svg class="icon icon--xsmall">
+                                    <use href="#icon-phone"></use>
+                                </svg>
+                            </span>
+                            Call Me
+                        </h4>
+                        <a href="tel:+918882347504">+91 888 23 47 504</a>
+                    </div>
+
+                    <div class="contact-item">
+                        <h4>
+                            <span class="contact-icon" aria-hidden="true">
+                                <svg class="icon icon--xsmall">
+                                    <use href="#icon-link"></use>
+                                </svg>
+                            </span>
+                            LinkedIn
+                        </h4>
+                        <a href="https://www.linkedin.com/in/masoom-kumar-27162570/" target="_blank" rel="noopener">View Profile</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Masoom Kumar Consulting. Building practical AI workflow automation capability.</p>
+    </footer>
+
+    <script>
+        (function () {
+            const navToggle = document.querySelector('.nav-toggle');
+            const navLinks = document.getElementById('primary-nav');
+            const closeNav = () => {
+                document.body.classList.remove('nav-open');
+                navToggle.setAttribute('aria-expanded', 'false');
+            };
+
+            if (navToggle && navLinks) {
+                navToggle.addEventListener('click', () => {
+                    const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
+                    navToggle.setAttribute('aria-expanded', String(!isOpen));
+                    document.body.classList.toggle('nav-open', !isOpen);
+                });
+
+                navLinks.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (window.matchMedia('(max-width: 768px)').matches) {
+                            closeNav();
+                        }
+                    });
+                });
+
+                window.addEventListener('resize', () => {
+                    if (!window.matchMedia('(max-width: 768px)').matches) {
+                        closeNav();
+                    }
+                });
+            }
+        })();
+    </script>
+</body>
+</html>
