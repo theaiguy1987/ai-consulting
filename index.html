@@ -730,10 +730,16 @@
                     return;
                 }
 
-                phaseCards[index].scrollIntoView({
-                    behavior: prefersReducedMotion.matches ? 'auto' : 'smooth',
-                    block: 'nearest',
-                    inline: 'center'
+                const card = phaseCards[index];
+                const cardRect = card.getBoundingClientRect();
+                const containerRect = cardContainer.getBoundingClientRect();
+                const deltaLeft = (cardRect.left - containerRect.left) - (containerRect.width / 2 - cardRect.width / 2);
+                const maxLeft = Math.max(0, cardContainer.scrollWidth - cardContainer.clientWidth);
+                const targetLeft = Math.min(maxLeft, Math.max(0, cardContainer.scrollLeft + deltaLeft));
+
+                cardContainer.scrollTo({
+                    left: targetLeft,
+                    behavior: prefersReducedMotion.matches ? 'auto' : 'smooth'
                 });
             };
 
